@@ -12,13 +12,22 @@ lua54 'yes'
 shared_scripts {
   '@siku_core/init.lua',
   'config/translation.lua',
+  'config/intro.lua',
+  'config/scenes.lua',
 }
 
 server_scripts {
   'server/init.lua',
+  'server/main.lua',
 }
 
 client_scripts {
+  'client/modules/state.lua',
+  'client/modules/actors.lua',
+  'client/modules/cameras.lua',
+  'client/modules/steps.lua',
+  'client/modules/cleanup.lua',
+  'client/modules/sequence.lua',
   'client/main.lua',
 }
 
