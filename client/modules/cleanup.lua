@@ -18,6 +18,12 @@ function CleanupIntro()
   FreezeEntityPosition(ped, false)
   ClearPedTasks(ped)
 
+  --- Whoever staged the character before the introduction may have taken
+  --- player control away (the character resource does); the introduction
+  --- is the last one holding the player, so it hands everything back.
+  SetPlayerControl(PlayerId(), true, 0)
+  SetPlayerInvincible(PlayerId(), false)
+
   if IntroConfig.hideHud then
     DisplayRadar(true)
 
